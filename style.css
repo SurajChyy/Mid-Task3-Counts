@@ -1,0 +1,22 @@
+/*<!-- Create an html page that has one input, which can take multiline text and a submit button. 
+Once the users clicks the submit button, it should show the number of characters, lines and words in the text. 
+Words are separated with white space and lines are separated with new line character. < -->*/
+
+#container {
+  text-align: center;
+  margin-top: 50px;
+}
+#myText {
+  width: 70%;
+  height: 100px;
+  /* /* margin-left: 200px; */
+  /* width: 100%; */
+}
+#submit {
+  margin-top: 10px;
+  padding: 7px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: aquamarine;
+  font-weight: 700;
+}

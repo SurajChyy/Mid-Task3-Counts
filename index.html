@@ -1,0 +1,52 @@
+<!-- Create an html page that has one input, which can take multiline text and a submit button. Once the users clicks the submit button, it should show the number of characters, lines and words in the text. Words are separated with white space and lines are separated with new line character. < -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Count Message </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h3>In this page there are</h3>      
+
+        <form   method = "get">
+            <br>
+            <textarea id="myText" rows = "5" cols = "60" name = "description"></textarea><br>
+            <input id="Submit" onclick="onSubmit()" type = "button" value = "Submit" />
+         </form>
+        
+        <h3>Number of Characters: <span id="currentCharacter">00</span></h3>
+        <h3>Number of Words: <span id="currentWord">00</span></h3>
+        <h3>Number of Lines: <span id="currentLine">00</span></h3>
+        <br>    
+    </div>
+
+    <script>
+
+            function onSubmit() {
+
+            const stringLength = document.getElementById("myText").value.length;
+            // const x = stringLength - stringLength.count(" ");
+            // console.log(x);
+            if(stringLength == " "){
+                alert("Please Write something");
+            }
+            document.getElementById("currentCharacter").innerText =stringLength;
+
+            const string = document.getElementById("myText").value;
+                    var wordCount = string.match(/(\w+)/g).length;
+                    var lineCount = string.split(/\r?\n|\r/).length;
+
+            document.getElementById("currentWord").innerText = wordCount;
+            document.getElementById("currentLine").innerText = lineCount;
+
+            }
+
+    </script>
+    
+</body>
+</html>
